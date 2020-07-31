@@ -98,6 +98,7 @@ class NavBar extends Component {
                                     <li><Link to={`${process.env.PUBLIC_URL}/left-sidebar/collection`} >{translate('products')}</Link></li>
                                     <li><Link to={`${process.env.PUBLIC_URL}/left-sidebar/product/1`} >{translate('left_sidebar')}</Link></li>
                                     <li><Link to={`${process.env.PUBLIC_URL}/checkout`} >{translate('checkout')}</Link></li>
+                                    <li><Link to={`${process.env.PUBLIC_URL}/compare`} >{translate('compare')}</Link></li>
                                 </ul>
                             </li>
                             <li >

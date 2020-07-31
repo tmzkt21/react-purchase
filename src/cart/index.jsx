@@ -26,7 +26,7 @@ class cartComponent extends Component {
                 </Helmet>
                 {/*SEO Support End */}
 
-                <Breadcrumb title={'Cart Page'}/>
+                <Breadcrumb title={'장바구니'}/>
 
                 {cartItems.length>0 ?
                 <section className="cart-section section-b-space">
@@ -36,12 +36,12 @@ class cartComponent extends Component {
                                 <table className="table cart-table table-responsive-xs">
                                     <thead>
                                     <tr className="table-head">
-                                        <th scope="col">image</th>
-                                        <th scope="col">product name</th>
-                                        <th scope="col">price</th>
-                                        <th scope="col">quantity</th>
-                                        <th scope="col">action</th>
-                                        <th scope="col">total</th>
+                                        <th scope="col">사진</th>
+                                        <th scope="col">차이름</th>
+                                        <th scope="col">가격</th>
+                                        <th scope="col">차대수</th>
+                                        <th scope="col">삭제</th>
+                                        <th scope="col">가격</th>
                                     </tr>
                                     </thead>
                                     {cartItems.map((item, index) => {

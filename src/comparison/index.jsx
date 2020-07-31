@@ -73,7 +73,7 @@ class Compare extends Component {
                                                 </div>
                                                 <div className="detail-part">
                                                     <div className="title-detail">
-                                                        <h5>discription</h5>
+                                                        <h5>연간유지비</h5>
                                                     </div>
                                                     <div className="inner-detail">
                                                         <p>{item.shortDetails}</p>
@@ -81,7 +81,7 @@ class Compare extends Component {
                                                 </div>
                                                 <div className="detail-part">
                                                     <div className="title-detail">
-                                                        <h5>Brand Name</h5>
+                                                        <h5>연료</h5>
                                                     </div>
                                                     <div className="inner-detail">
                                                         <p>{item.tags}</p>
@@ -89,7 +89,7 @@ class Compare extends Component {
                                                 </div>
                                                 <div className="detail-part">
                                                     <div className="title-detail">
-                                                        <h5>size</h5>
+                                                        <h5>평균연비</h5>
                                                     </div>
                                                     <div className="inner-detail">
                                                         <p>{item.size}</p>
@@ -97,7 +97,7 @@ class Compare extends Component {
                                                 </div>
                                                 <div className="detail-part">
                                                     <div className="title-detail">
-                                                        <h5>color</h5>
+                                                        <h5>가격</h5>
                                                     </div>
                                                     <div className="inner-detail">
                                                         <p>{item.colors}</p>
@@ -105,7 +105,7 @@ class Compare extends Component {
                                                 </div>
                                                 <div className="detail-part">
                                                     <div className="title-detail">
-                                                        <h5>availability</h5>
+                                                        <h5>연간 평균 연비</h5>
                                                     </div>
                                                     <div className="inner-detail">
                                                         <p>In stock</p>

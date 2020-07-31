@@ -10,7 +10,7 @@ const Breadcrumb = props => {
                         <div className="col-md-6">
                             <div className="page-title">
                                 <h2>{title}</h2>
-                            </div>
+                            </div> 
                         </div>
                         <div className="col-md-6">
                             <nav aria-label="breadcrumb" className="theme-breadcrumb">
