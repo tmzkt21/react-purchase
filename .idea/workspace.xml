@@ -26,16 +26,32 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7391774a-aa25-43ef-bbcf-6fbde24c4ada" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/chart/chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chart/chartx.js" afterDir="false" />
+    <list default="true" id="7391774a-aa25-43ef-bbcf-6fbde24c4ada" name="Default Changelist" comment="그래프 등록 화면 정리필요">
+      <change afterPath="$PROJECT_DIR$/src/newSales/prices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/newSales/registration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/atomic/constants/chartData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/atomic/constants/chartData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/atomic/constants/translations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/atomic/constants/translations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cart/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/cart/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/breadcrumb.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/breadcrumb.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bookmark/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/bookmark/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cart/CartContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cart/CartContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cart/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/shopping-basket.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chart/chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chart/chartx.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/headers/common/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/headers/common/navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/comparison/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/comparison/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/purchase/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/purchase/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comparison/comparison.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comparison/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/comparison.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newSales/collection-left-sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/purchase.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newSales/common/product/details-price.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/common/product/details-price.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newSales/common/product/image-zoom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/common/product/image-zoom.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newSales/common/product/small-image.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/common/product/small-image.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newSales/common/service.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/common/service.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newSales/left-sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/detailpurchase.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newSales/registration-cost.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/purchase/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/payment.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,19 +96,19 @@
     <property name="ts.external.directory.path" value="C:\Users\UserK\WebstormProjects\react-purchase\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\UserK\WebstormProjects\react-purchase\src\newSales" />
+      <recent name="C:\Users\UserK\WebstormProjects\react-purchase\src\chart" />
+      <recent name="C:\Users\ME\WebstormProjects\ElectricVehicle_LifeCycle_React\public\assets\carimg" />
+      <recent name="C:\Users\ME\WebstormProjects\ElectricVehicle_LifeCycle_React\public\assets\img" />
+      <recent name="C:\Users\ME\WebstormProjects\ElectricVehicle_LifeCycle_React\public\assets" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ME\WebstormProjects\ElectricVehicle_LifeCycle_React\src" />
       <recent name="C:\Users\ME\WebstormProjects\ElectricVehicle_LifeCycle_React\public\assets" />
       <recent name="C:\Users\ME\WebstormProjects\ElectricVehicle_LifeCycle_React\src\assets" />
       <recent name="C:\Users\ME\WebstormProjects\ElectricVehicle_LifeCycle_React\public\assets\images\icon" />
       <recent name="C:\Users\ME\WebstormProjects\ElectricVehicle_LifeCycle_React\public\assets\images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\UserK\WebstormProjects\react-purchase\src\chart" />
-      <recent name="C:\Users\ME\WebstormProjects\ElectricVehicle_LifeCycle_React\public\assets\carimg" />
-      <recent name="C:\Users\ME\WebstormProjects\ElectricVehicle_LifeCycle_React\public\assets\img" />
-      <recent name="C:\Users\ME\WebstormProjects\ElectricVehicle_LifeCycle_React\public\assets" />
-      <recent name="C:\Users\ME\WebstormProjects\ElectricVehicle_LifeCycle_React\public" />
     </key>
   </component>
   <component name="RunManager">
@@ -139,8 +155,18 @@
       <workItem from="1596196842617" duration="492000" />
       <workItem from="1596197343366" duration="423000" />
       <workItem from="1596198720344" duration="946000" />
-      <workItem from="1596212107248" duration="5821000" />
+      <workItem from="1596212107248" duration="9601000" />
+      <workItem from="1596261565722" duration="25762000" />
+      <workItem from="1596290082926" duration="539000" />
     </task>
+    <task id="LOCAL-00001" summary="그래프 등록 화면 정리필요">
+      <created>1596218593738</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596218593738</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +196,10 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="그래프 등록 화면 정리필요" />
+    <option name="LAST_COMMIT_MESSAGE" value="그래프 등록 화면 정리필요" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="299" y="133" width="770" height="553" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595854393203">
       <screen x="0" y="0" width="1366" height="728" />
@@ -180,35 +210,39 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="696" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1596188794563" />
-    <state width="1259" height="145" key="GridCell.Tab.0.bottom" timestamp="1596217970883">
-      <screen x="1366" y="0" width="1280" height="680" />
+    <state width="1345" height="2" key="GridCell.Tab.0.bottom" timestamp="1596290041490">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1259" height="145" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596217970883" />
-    <state width="1345" height="160" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596206697950" />
+    <state width="1259" height="145" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596221993163" />
+    <state width="1345" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596290041490" />
     <state width="1894" height="287" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1595839245317" />
-    <state width="1259" height="145" key="GridCell.Tab.0.center" timestamp="1596217970883">
-      <screen x="1366" y="0" width="1280" height="680" />
+    <state width="1345" height="2" key="GridCell.Tab.0.center" timestamp="1596290041490">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1259" height="145" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596217970883" />
-    <state width="1345" height="160" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596206697950" />
+    <state width="1259" height="145" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596221993163" />
+    <state width="1345" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596290041490" />
     <state width="1894" height="287" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1595839245316" />
-    <state width="1259" height="145" key="GridCell.Tab.0.left" timestamp="1596217970883">
-      <screen x="1366" y="0" width="1280" height="680" />
+    <state width="1345" height="2" key="GridCell.Tab.0.left" timestamp="1596290041490">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1259" height="145" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596217970883" />
-    <state width="1345" height="160" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596206697950" />
+    <state width="1259" height="145" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596221993163" />
+    <state width="1345" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596290041490" />
     <state width="1894" height="287" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1595839245316" />
-    <state width="1259" height="145" key="GridCell.Tab.0.right" timestamp="1596217970883">
-      <screen x="1366" y="0" width="1280" height="680" />
+    <state width="1345" height="2" key="GridCell.Tab.0.right" timestamp="1596290041490">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1259" height="145" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596217970883" />
-    <state width="1345" height="160" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596206697950" />
+    <state width="1259" height="145" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596221993163" />
+    <state width="1345" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596290041490" />
     <state width="1894" height="287" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1595839245317" />
-    <state x="1973" y="92" width="557" height="557" key="find.popup" timestamp="1596217617409">
+    <state x="1599" y="73" key="Vcs.Push.Dialog.v2" timestamp="1596218597258">
       <screen x="1366" y="0" width="1280" height="680" />
     </state>
-    <state x="1973" y="92" width="557" height="557" key="find.popup/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596217617409" />
-    <state x="648" y="99" width="586" height="596" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1596187971678" />
+    <state x="1599" y="73" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596218597258" />
+    <state x="297" y="99" width="586" height="596" key="find.popup" timestamp="1596289568360">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="2041" y="123" width="557" height="557" key="find.popup/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596219801834" />
+    <state x="297" y="99" width="586" height="596" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1596289568360" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

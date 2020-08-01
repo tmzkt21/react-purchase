@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import Breadcrumb from '../common/breadcrumb';
 import {removeFromCompare, addToCart} from '../atomic/actions'
 
-class Compare extends Component {
+class Comparison extends Component {
 
     changeQty = (e) => {
         this.setState({ quantity: parseInt(e.target.value) })
@@ -153,4 +153,4 @@ const mapStateToProps = (state) => ({
 export default connect(
     mapStateToProps,
     {removeFromCompare, addToCart}
-)(Compare)
+)(Comparison)

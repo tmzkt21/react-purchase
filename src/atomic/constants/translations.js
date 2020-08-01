@@ -1,4 +1,3 @@
-import prices from "../../chart/automobile-prices";
 
 var module = {
     en: {
@@ -132,9 +131,15 @@ var module = {
             category_no_sidebar: '사이드바 없음',
             category_metro: '메트로',
             category_full_width: '전체화면',
-            products: '신차',
-            left_sidebar: '차상세보기',
-            Compare : '연비비교' ,
+
+            Purchase: '신차',
+            Detailpurchase: '신차상세',
+            Payment: '결제하기',
+            Basket: '장바구니',
+            Compare : '연비비교',
+            prices : '신차시세',
+            Registration: '차등록비용',
+
             right_sidebar: '오른쪽 사이드바',
             no_sidebar: '사이드바 없음',
             three_col_thumbnail_left: '왼쪽 썸네일',

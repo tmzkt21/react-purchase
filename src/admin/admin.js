@@ -8,7 +8,7 @@ import { ScrollContext } from 'react-router-scroll-4';
 import Login from "./login";
 
 // Components
-import Dashboard from './dashboard';
+import Dashboard from '../newSales/prices';
 
 class Admin extends Component {
     render() {

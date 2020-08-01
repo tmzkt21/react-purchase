@@ -7,7 +7,7 @@ import FilterBar from "./common/filter-bar";
 import ProductListing from "./common/product-listing";
 import StickyBox from "react-sticky-box";
 
-const CollectionLeftSidebar = () => {
+const Purchase = () => {
     const [layoutColumns,setlayoutColumns] =useState(3)
     const LayoutViewClicked = (colums) => {
         setlayoutColumns(colums)
@@ -95,4 +95,4 @@ const CollectionLeftSidebar = () => {
             </div>
         )
 }
-export default CollectionLeftSidebar;
+export default Purchase;

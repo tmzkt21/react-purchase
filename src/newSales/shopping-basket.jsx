@@ -8,7 +8,7 @@ import Breadcrumb from "../common/breadcrumb";
 import {getCartTotal} from "../atomic/services";
 import {removeFromCart, incrementQty, decrementQty} from '../atomic/actions'
 
-class cartComponent extends Component {
+class Basket extends Component {
 
     constructor (props) {
         super (props)
@@ -121,7 +121,7 @@ class cartComponent extends Component {
                                 <Link to={`${process.env.PUBLIC_URL}/left-sidebar/collection`} className="btn btn-solid">continue shopping</Link>
                             </div>
                             <div className="col-6">
-                                <Link to={`${process.env.PUBLIC_URL}/checkout`} className="btn btn-solid">check out</Link>
+                                <Link to={`${process.env.PUBLIC_URL}/payment`} className="btn btn-solid">check out</Link>
                             </div>
                         </div>
                     </div>
@@ -158,4 +158,4 @@ const mapStateToProps = (state) => ({
 export default connect(
     mapStateToProps,
     {removeFromCart, incrementQty, decrementQty}
-)(cartComponent)
+)(Basket)

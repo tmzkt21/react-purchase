@@ -95,10 +95,17 @@ class NavBar extends Component {
                                     <span className="sub-arrow"/>
                                 </Link>
                                 <ul className="nav-submenu">
-                                    <li><Link to={`${process.env.PUBLIC_URL}/left-sidebar/collection`} >{translate('products')}</Link></li>
-                                    <li><Link to={`${process.env.PUBLIC_URL}/left-sidebar/product/1`} >{translate('left_sidebar')}</Link></li>
-                                    <li><Link to={`${process.env.PUBLIC_URL}/checkout`} >{translate('checkout')}</Link></li>
-                                    <li><Link to={`${process.env.PUBLIC_URL}/compare`} >{translate('compare')}</Link></li>
+                                    {/*<li><Link to={`${process.env.PUBLIC_URL}/`}>{translate('Purchase')}</Link></li>*/}
+                                    {/*<li><Link to={`${process.env.PUBLIC_URL}/detailpurchase/Purchase/:id`}>{translate('Detailpurchase')}</Link></li>*/}
+                                    <li><Link to={`${process.env.PUBLIC_URL}/left-sidebar/collection`} >{translate('Purchase')}</Link></li>
+                                    <li><Link to={`${process.env.PUBLIC_URL}/left-sidebar/product/1`} >{translate('Detailpurchase')}</Link></li>
+                                    <li><Link to={`${process.env.PUBLIC_URL}/payment`} >{translate('Payment')}</Link></li>
+                                    <li><Link to={`${process.env.PUBLIC_URL}/basket`} >{translate('Basket')}</Link></li>
+                                    <li><Link to={`${process.env.PUBLIC_URL}/compare`} >{translate('Compare')}</Link></li>
+                                    <li><Link to={`${process.env.PUBLIC_URL}/prices`} >{translate('Prices')}</Link></li>
+                                    <li><Link to={`${process.env.PUBLIC_URL}/registration`} >{translate('Registration')}</Link></li>
+
+
                                 </ul>
                             </li>
                             <li >
@@ -107,9 +114,14 @@ class NavBar extends Component {
                                     <span className="sub-arrow"/>
                                 </Link>
                                 <ul className="nav-submenu">
+                                    {/*<li><Link to={`${process.env.PUBLIC_URL}/left-sidebar/collection`} >{translate('products')}</Link></li>*/}
                                     <li><Link to={`${process.env.PUBLIC_URL}/left-sidebar/collection`} >{translate('products')}</Link></li>
                                     <li><Link to={`${process.env.PUBLIC_URL}/left-sidebar/product/1`} >{translate('left_sidebar')}</Link></li>
-                                    <li><Link to={`${process.env.PUBLIC_URL}/checkout`} >{translate('checkout')}</Link></li>
+                                    <li><Link to={`${process.env.PUBLIC_URL}/payment`} >{translate('Payment')}</Link></li>
+                                    <li><Link to={`${process.env.PUBLIC_URL}/basket`} >{translate('Basket')}</Link></li>
+                                    <li><Link to={`${process.env.PUBLIC_URL}/compare`} >{translate('Compare')}</Link></li>
+                                    <li><Link to={`${process.env.PUBLIC_URL}/prices`} >{translate('Prices')}</Link></li>
+                                    <li><Link to={`${process.env.PUBLIC_URL}/registration`} >{translate('Registration')}</Link></li>
                                 </ul>
                             </li>
                             <li>

@@ -7,9 +7,7 @@ import {
     svgpayment
 } from "../../atomic/services/script"
 
-class Service extends Component {
-    render (){
-
+const Service = () => {
         return (
             <div className="collection-filter-block ">
                 <div className="product-service">
@@ -44,7 +42,7 @@ class Service extends Component {
                 </div>
             </div>
         )
-    }
+
 }
 
 export default Service;

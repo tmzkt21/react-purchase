@@ -9,7 +9,7 @@ import Breadcrumb from "../common/breadcrumb";
 import {removeFromWishlist} from '../atomic/actions'
 import {getCartTotal} from "../atomic/services";
 
-class checkOut extends Component {
+class Payment extends Component {
 
     constructor (props) {
         super (props)
@@ -327,4 +327,4 @@ const mapStateToProps = (state) => ({
 export default connect(
     mapStateToProps,
     {removeFromWishlist}
-)(checkOut)
+)(Payment)

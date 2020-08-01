@@ -294,11 +294,12 @@ export const buyOption = {
 }
 
 export const employeeData = {
-    labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    labels: ["2020년", "2021년", "2022년", "2023년", "2024년", "2025년", "2026년"],
     datasets: [
         {
             lagend: 'none',
-            data: [60, 78, 60, 89, 76, 87, 47],
+            // data: [60, 78, 60, 89, 76, 87, 47],
+            data: [100000, 9000, 8000, 7000, 6000, 5000, 4000],
             borderColor: '#ff8084',
             backgroundColor: 'rgba(255, 128, 132, 0.1)',
             fill: 'origin',
