@@ -1,7 +1,6 @@
-import React, { Component,Fragment } from 'react';
+import React, { Fragment } from 'react';
 
-export class Registration extends Component {
-    render() {
+export const Registration = () => {
         return (
             <Fragment>
                 <div className="col-xl-6 xl-100">
@@ -66,7 +65,6 @@ export class Registration extends Component {
             </Fragment>
 
         )
-    }
 }
 
 export default Registration

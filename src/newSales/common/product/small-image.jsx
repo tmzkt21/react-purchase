@@ -1,5 +1,4 @@
-
-import React, {Component, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import Slider from 'react-slick';
 
 const SmallImages = (props) => {

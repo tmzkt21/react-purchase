@@ -1,65 +1,31 @@
-import React, {Component} from 'react';
-import {Helmet} from 'react-helmet'
-import {connect, useSelector} from 'react-redux'
-import {Link} from 'react-router-dom'
-import {toast} from "react-toastify";
+import {useSelector} from "react-redux";
+import {getCartTotal} from "../atomic/services";
+import {Helmet} from "react-helmet";
 import Breadcrumb from "../common/breadcrumb";
-// import * as types from "../atomic/constants/ActionTypes";
-// import {getCartTotal} from "../atomic/services";
-// import {removeFromCart, incrementQty, decrementQty, addToCartUnsafe} from '../atomic/actions'
+import {Link} from "react-router-dom";
+import React from "react";
+import {decrementQty, incrementQty, removeFromCart} from "./cartReducer";
 
+export const CartComponent = () => {
 
-const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
-const DECREMENT_QTY = 'DECREMENT_QTY'
-const ADD_TO_CART = 'ADD_TO_CART'
-const getCartTotal = cartItems => {
-    var total = 0;
-    for(var i=0; i<cartItems.length; i++){
-        total += parseInt(cartItems[i].qty, 10)*parseInt((cartItems[i].price*cartItems[i].discount/100), 10);
-    }
-    return total;
-}
-const removeFromCart = product_id => (dispatch) => {
-    toast.error("Item Removed from Cart");
-    dispatch({
-        type: REMOVE_FROM_CART,
-        product_id
-    })
-};
-const incrementQty = (product,qty) => (dispatch) => {
-    toast.success("Item Added to Cart");
-    dispatch(addToCartUnsafe(product, qty))
+    const {cartItems, symbol, total} = useSelector(state=>({
+        cartItems: state.cart.items,
+        symbol: state.data.symbol,
+        total: getCartTotal(state.cartItems)
+    }))
 
-}
-const decrementQty = productId => (dispatch) => {
-    toast.warn("Item Decrement Qty to Cart");
+    return <>
+        <div>
+            {/*SEO Support*/}
+            <Helmet>
+                <title>MultiKart | Cart List Page</title>
+                <meta name="description" content="Multikart – Multipurpose eCommerce React Template is a multi-use React template. It is designed to go well with multi-purpose websites. Multikart Bootstrap 4 Template will help you run multiple businesses." />
+            </Helmet>
+            {/*SEO Support End */}
 
-    dispatch({
-        type: DECREMENT_QTY,
-        productId})
-};
-const addToCartUnsafe = (product, qty) => ({
-    type: ADD_TO_CART,
-    product,
-    qty
-});
+            <Breadcrumb title={'Cart Page'}/>
 
-const Basket = () => {
-    const cartItems = useSelector(state =>state.cartList.cart)
-    const symbol = useSelector(state =>state.data.symbol)
-    const total = useSelector(state =>getCartTotal(state.cartList.cart))
-        return (
-            <div>
-                {/*SEO Support*/}
-                <Helmet>
-                    <title>MultiKart | Cart List Page</title>
-                    <meta name="description" content="Multikart – Multipurpose eCommerce React Template is a multi-use React template. It is designed to go well with multi-purpose websites. Multikart Bootstrap 4 Template will help you run multiple businesses." />
-                </Helmet>
-                {/*SEO Support End */}
-
-                <Breadcrumb title={'장바구니'}/>
-
-                {cartItems.length>0 ?
+            {cartItems.length>0 ?
                 <section className="cart-section section-b-space">
                     <div className="container">
                         <div className="row">
@@ -67,23 +33,23 @@ const Basket = () => {
                                 <table className="table cart-table table-responsive-xs">
                                     <thead>
                                     <tr className="table-head">
-                                        <th scope="col">사진</th>
-                                        <th scope="col">차이름</th>
-                                        <th scope="col">가격</th>
-                                        <th scope="col">차대수</th>
-                                        <th scope="col">삭제</th>
-                                        <th scope="col">가격</th>
+                                        <th scope="col">image</th>
+                                        <th scope="col">product name</th>
+                                        <th scope="col">price</th>
+                                        <th scope="col">quantity</th>
+                                        <th scope="col">action</th>
+                                        <th scope="col">total</th>
                                     </tr>
                                     </thead>
                                     {cartItems.map((item, index) => {
                                         return (
-                                        <tbody key={index}>
+                                            <tbody key={index}>
                                             <tr>
                                                 <td>
                                                     <Link to={`${process.env.PUBLIC_URL}/left-sidebar/product/${item.id}`}>
                                                         <img src={item.variants?
-                                                                  item.variants[0].images
-                                                                  :item.pictures[0]} alt="" />
+                                                            item.variants[0].images
+                                                            :item.pictures[0]} alt="" />
                                                     </Link>
                                                 </td>
                                                 <td><Link to={`${process.env.PUBLIC_URL}/left-sidebar/product/${item.id}`}>{item.name}</Link>
@@ -101,7 +67,7 @@ const Basket = () => {
                                                         </div>
                                                         <div className="col-xs-3">
                                                             <h2 className="td-color">
-                                                                <a href="#" className="icon" onClick={() => removeFromCart(item)}>
+                                                                <a href="#" className="icon" onClick={removeFromCart(item)}>
                                                                     <i className="icon-close"></i>
                                                                 </a>
                                                             </h2>
@@ -113,14 +79,14 @@ const Basket = () => {
                                                     <div className="qty-box">
                                                         <div className="input-group">
                                                             <span className="input-group-prepend">
-                                                                <button type="button" className="btn quantity-left-minus" onClick={() => decrementQty(item.id)} data-type="minus" data-field="">
+                                                                <button type="button" className="btn quantity-left-minus" onClick={decrementQty(item.id)} data-type="minus" data-field="">
                                                                  <i className="fa fa-angle-left"></i>
                                                                 </button>
                                                             </span>
                                                             <input type="text" name="quantity" value={item.qty} readOnly={true} className="form-control input-number" />
 
                                                             <span className="input-group-prepend">
-                                                            <button className="btn quantity-right-plus" onClick={() => incrementQty(item, 1)}  data-type="plus" disabled={(item.qty >= item.stock)? true : false}>
+                                                            <button className="btn quantity-right-plus" onClick={incrementQty(item, 1)}  data-type="plus" disabled={(item.qty >= item.stock)? true : false}>
                                                             <i className="fa fa-angle-right"></i>
                                                             </button>
                                                            </span>
@@ -128,13 +94,13 @@ const Basket = () => {
                                                     </div>{(item.qty >= item.stock)? 'out of Stock' : ''}
                                                 </td>
                                                 <td>
-                                                    <a href="#" className="icon" onClick={() => removeFromCart(item)}>
+                                                    <a href="#" className="icon" onClick={removeFromCart(item)}>
                                                         <i className="fa fa-times"></i>
                                                     </a>
                                                 </td>
                                                 <td><h2 className="td-color">{symbol}{item.sum}</h2></td>
                                             </tr>
-                                        </tbody> )
+                                            </tbody> )
                                     })}
                                 </table>
                                 <table className="table cart-table table-responsive-md">
@@ -152,7 +118,7 @@ const Basket = () => {
                                 <Link to={`${process.env.PUBLIC_URL}/left-sidebar/collection`} className="btn btn-solid">continue shopping</Link>
                             </div>
                             <div className="col-6">
-                                <Link to={`${process.env.PUBLIC_URL}/payment`} className="btn btn-solid">check out</Link>
+                                <Link to={`${process.env.PUBLIC_URL}/checkout`} className="btn btn-solid">check out</Link>
                             </div>
                         </div>
                     </div>
@@ -175,16 +141,8 @@ const Basket = () => {
                         </div>
                     </div>
                 </section>
-                }
-            </div>
-        )
-
+            }
+        </div>
+    </>
 }
-
-// const mapStateToProps = (state) => ({
-//     cartItems: state.cartList.cart,
-//     symbol: state.data.symbol,
-//     total: getCartTotal(state.cartList.cart)
-// })
-
-export default Basket
+export default CartComponent

@@ -5,10 +5,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ScrollContext } from 'react-router-scroll-4';
 import { IntlProvider } from 'react-redux-multilingual'
 import './index.scss';
-
 import store from "./atomic/store";
 import translations from './atomic/constants/translations'
-import { getAllProducts } from './atomic/actions'
 import Layout from './App'
 import Basket from './newSales/shopping-basket'
 import Payment from './newSales/payment'
@@ -18,9 +16,10 @@ import Prices from "./newSales/prices";
 import Registration from "./newSales/registration";
 import Detailpurchase from "./newSales/detailpurchase";
 
+
 const Root = () => {
 
-        store.dispatch(getAllProducts());
+        // store.dispatch(getAllProducts());
 
         return (
             <Provider store={store}>

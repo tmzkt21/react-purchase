@@ -1,34 +1,40 @@
 import React, { Component,Fragment } from 'react';
-import Breadcrumb from '../admin/common/breadcrumb';
-import { Navigation, Box, MessageSquare, Users, Briefcase, CreditCard, ShoppingCart, Calendar } from 'react-feather';
-import CountUp from 'react-countup';
-import { Chart } from "react-google-charts";
 import CanvasJSReact from '../assets/canvas/canvasjs.react';
 
-import { Pie, Doughnut, Bar, Line } from 'react-chartjs-2';
-import { 
-    pieOptions, 
-    doughnutOption, 
-    lineOptions, 
-    buyOption, 
-    employeeData, 
-    employeeOptions 
-} from '../atomic/constants/chartData'
+import { Line } from 'react-chartjs-2';
+// import {
+//     employeeData,
+//     employeeOptions
+// } from '../atomic/constants/chartData'
 // image impoer
-import user2 from '../assets/images/dashboard/user2.jpg';
-import user1 from '../assets/images/dashboard/user1.jpg';
-import man from '../assets/images/dashboard/man.png';
-import user from '../assets/images/dashboard/user.png';
-import designer from '../assets/images/dashboard/designer.jpg'
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+const employeeData = {
+    labels: ["2020년", "2021년", "2022년", "2023년", "2024년", "2025년", "2026년"],
+    datasets: [
+        {
+            lagend: 'none',
+            // data: [60, 78, 60, 89, 76, 87, 47],
+            data: [100000, 9000, 8000, 7000, 6000, 5000, 4000],
+            borderColor: '#ff8084',
+            backgroundColor: 'rgba(255, 128, 132, 0.1)',
+            fill: 'origin',
+        }
+    ]
+};
+const employeeOptions = {
+    maintainAspectRatio: false,
+    height: 45,
+    width: 500,
+    animation: false,
+    legend: {
+        display: false,
+    },
+}
 
 
-export class Prices extends Component {
-
-    render() {
+export const Prices = () => {
         return (
-
             <Fragment>
                 {/*<Breadcrumb title="Dashboard" parent="Dashboard" />*/}
                 <div className="container-fluid">
@@ -59,7 +65,7 @@ export class Prices extends Component {
             </Fragment>
 
         )
-    }
+
 }
 
 export default Prices

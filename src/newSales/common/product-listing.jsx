@@ -1,54 +1,79 @@
-import React, {Component} from 'react';
-import { connect } from 'react-redux'
+import React, {Component, useState} from 'react';
+import {connect, useSelector} from 'react-redux'
 import {Link} from 'react-router-dom';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-
-import { getTotal, getCartProducts } from '../../atomic/reducers'
-import { addToCart, addToWishlist, addToCompare } from '../../atomic/actions'
 import {getVisibleproducts} from '../../atomic/services';
 import ProductListItem from "./product-list-item";
+import {toast} from "react-toastify";
 
-class ProductListing extends Component {
+const ADD_TO_CART = 'ADD_TO_CART'
+const ADD_TO_WISHLIST = 'ADD_TO_WISHLIST'
+const ADD_TO_COMPARE = 'ADD_TO_COMPARE'
+const addToCart = (product,qty) => (dispatch) => {
+    toast.success("Item Added to Cart");
+    dispatch(addToCartUnsafe(product, qty))
 
-    constructor (props) {
-        super (props)
+}
+const addToWishlist = (product) => (dispatch) => {
+    toast.success("Item Added to Wishlist");
+    dispatch(addToWishlistUnsafe(product))
 
-        this.state = { limit: 5, hasMoreItems: true };
+}
+const addToCompare = (product) => (dispatch) => {
+    toast.success("Item Added to Compare");
+    dispatch(addToCompareUnsafe(product))
+}
 
+const addToCartUnsafe = (product, qty) => ({
+    type: ADD_TO_CART,
+    product,
+    qty
+});
+export const addToWishlistUnsafe = (product) => ({
+    type: ADD_TO_WISHLIST,
+    product
+});
+export const addToCompareUnsafe= (product) => ({
+    type: ADD_TO_COMPARE,
+    product
+});
+
+const ProductListing = (props) => {
+    const [limit,setlimit] = useState(5)
+    const [hasMoreItems,sethasMoreItems] = useState(true)
+    const products = useSelector(state => getVisibleproducts(state.data, state.filters))
+    const symbol = useSelector(state => state.data.symbol)
+    
+
+    const componentWillMount = () => {
+        fetchMoreItems();
     }
 
-    componentWillMount(){
-        this.fetchMoreItems();
-    }
-
-    fetchMoreItems = () => {
-        if (this.state.limit >= this.props.products.length) {
-            this.setState({ hasMoreItems: false });
+   const fetchMoreItems = () => {
+        if (limit >= products.length) {
+            sethasMoreItems( false );
             return;
         }
         // a fake async api call
         setTimeout(() => {
-            this.setState({
-                limit: this.state.limit + 5
-            });
+            setlimit(limit + 5);
         }, 3000);
 
 
     }
 
-    render (){
-        const {products, addToCart, symbol, addToWishlist, addToCompare} = this.props;
-        console.log(this.props.colSize)
+    
+        console.log(props.colSize)
         return (
             <div>
                 <div className="product-wrapper-grid">
                     <div className="container-fluid">
                         {products.length > 0 ?
                             <InfiniteScroll
-                                dataLength={this.state.limit} //This is important field to render the next data
-                                next={this.fetchMoreItems}
-                                hasMore={this.state.hasMoreItems}
+                                dataLength={limit} //This is important field to render the next data
+                                next={fetchMoreItems}
+                                hasMore={hasMoreItems}
                                 loader={<div className="loading-cls"></div>}
                                 endMessage={
                                     <p className="seen-cls seen-it-cls">
@@ -57,8 +82,8 @@ class ProductListing extends Component {
                                 }
                             >
                                 <div className="row">
-                                    { products.slice(0, this.state.limit).map((product, index) =>
-                                        <div className={`${this.props.colSize===3?'col-xl-3 col-md-6 col-grid-box':'col-lg-'+this.props.colSize}`} key={index}>
+                                    { products.slice(0, limit).map((product, index) =>
+                                        <div className={`${props.colSize===3?'col-xl-3 col-md-6 col-grid-box':'col-lg-'+props.colSize}`} key={index}>
                                         <ProductListItem product={product} symbol={symbol}
                                                          onAddToCompareClicked={() => addToCompare(product)}
                                                          onAddToWishlistClicked={() => addToWishlist(product)}
@@ -81,13 +106,8 @@ class ProductListing extends Component {
                 </div>
             </div>
         )
-    }
+    
 }
-const mapStateToProps = (state) => ({
-    products: getVisibleproducts(state.data, state.filters),
-    symbol: state.data.symbol,
-})
 
-export default connect(
-    mapStateToProps, {addToCart, addToWishlist, addToCompare}
-)(ProductListing)
+
+export default ProductListing

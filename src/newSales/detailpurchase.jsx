@@ -1,19 +1,40 @@
-import React, {Component, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {Helmet} from 'react-helmet'
 import Slider from 'react-slick';
 import '../common/index.scss';
-import {connect, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 
-// import custom Components
 import Service from "./common/service";
 import NewProduct from "../common/new-product";
 import Breadcrumb from "../common/breadcrumb";
 import DetailsWithPrice from "./common/product/details-price";
 import DetailsTopTabs from "./common/details-top-tabs";
-import { addToCart, addToCartUnsafe, addToWishlist } from '../atomic/actions'
 import ImageZoom from './common/product/image-zoom'
 import SmallImages from './common/product/small-image'
+import {toast} from "react-toastify";
 
+const ADD_TO_CART = 'ADD_TO_CART'
+const ADD_TO_WISHLIST = 'ADD_TO_WISHLIST'
+
+const addToCart = (product,qty) => (dispatch) => {
+    toast.success("Item Added to Cart");
+    dispatch(addToCartUnsafe(product, qty))
+
+}
+const addToCartUnsafe = (product, qty) => ({
+    type: ADD_TO_CART,
+    product,
+    qty
+});
+const addToWishlist = (product) => (dispatch) => {
+    toast.success("Item Added to Wishlist");
+    dispatch(addToWishlistUnsafe(product))
+
+}
+const addToWishlistUnsafe = (product) => ({
+    type: ADD_TO_WISHLIST,
+    product
+});
 
 
 const Detailpurchase = (props) => {
@@ -21,11 +42,9 @@ const Detailpurchase = (props) => {
     const [nav1,setnav1] = useState(null)
     //const [nav1,setnav1] = useState('slider1')
     const [nav2,setnav2] = useState(null)
-    const item = useSelector(state => state.data.products.find(el => el.id == props.match.params.id)) //.find(el => el.id == ownProps.match.params.id))
-
+    const item = useSelector(state => state.data.products.find(el => el.id == props.match.params.id))
     const symbol = useSelector(state => state.data.symbol)
     const slider = useRef('slider1')
-    // document.getElementById('idOfElement').classList.add('newClassName');
     const  componentDidMount = () => {
         setnav1('slider1')
         setnav2('slider2')
@@ -36,7 +55,6 @@ const Detailpurchase = (props) => {
     const backClick = () => {
         document.getElementById("filter").style.left = "-365px";
     }
-    const { addToCart, addToCartUnsafe, addToWishlist} = props
     var products = {
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -53,14 +71,11 @@ const Detailpurchase = (props) => {
     };
     return (
         <div>
-            {/*SEO Support*/}
             <Helmet>
                 <title>MultiKart | {item.category} | {item.name}</title>
                 <meta name="description" content="Multikart – Multipurpose eCommerce React Template is a multi-use React template. It is designed to go well with multi-purpose websites. Multikart Bootstrap 4 Template will help you run multiple businesses." />
             </Helmet>
-            {/*SEO Support End */}
-            <Breadcrumb  parent={'Product'} title={item.name} />
-            {/*Section Start*/}
+            <Breadcrumb  parent={'Product'} title={item.name}/>
             {(item)?
                 <section className="section-b-space">
                     <div className="collection-wrapper">
@@ -72,11 +87,8 @@ const Detailpurchase = (props) => {
                                             <i className="fa fa-angle-left" aria-hidden="true"></i> back
                                         </span>
                                     </div>
-                                    {/* <BrandBlock/> */}
                                     <Service/>
-                                    {/*side-bar single product slider start*/}
                                     <NewProduct/>
-                                    {/*side-bar single product slider end*/}
                                 </div>
                                 <div className="col-lg-9 col-sm-12 col-xs-12">
                                     <div className="">
@@ -114,10 +126,12 @@ const Detailpurchase = (props) => {
                         </div>
                     </div>
                 </section> : ''}
-            {/*Section End*/}
         </div>
     )
 }
+
+
+
 // const mapStateToProps = (state, ownProps) => {
 //     let productId = ownProps.match.params.id;
 //     return {
@@ -127,5 +141,3 @@ const Detailpurchase = (props) => {
 // }
 // export default connect(mapStateToProps, {addToCart, addToCartUnsafe, addToWishlist}) (LeftSideBar);
 export default Detailpurchase
-
-// export default connect(mapStateToProps, {addToCart, addToCartUnsafe, addToWishlist}) (Detailpurchase);

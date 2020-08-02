@@ -1,11 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.scss';
-import {Link} from 'react-router-dom'
 
-class DetailsTopTabs extends Component {
-    render (){
-
+const DetailsTopTabs = () => {
         return (
             <section className="tab-product m-0">
                 <div className="row">
@@ -135,7 +132,7 @@ class DetailsTopTabs extends Component {
                 </div>
             </section>
         )
-    }
+
 }
 
 export default DetailsTopTabs;

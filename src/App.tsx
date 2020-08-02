@@ -4,7 +4,7 @@ import { withTranslate } from 'react-redux-multilingual'
 
 // Custom Components
 import HeaderOne from './common/headers/header-one';
-// import FooterTwo from "./common/footers/footer-two";
+// import Footer from "./common/footers/footer-two";
 
 // ThemeSettings
 // import ThemeSettings from "./common/theme-settings"
@@ -16,7 +16,7 @@ const App = (props) => {
                 <HeaderOne logoName={'logocar.png'}/>
                 {/*{this.props.children}*/}
                 {props.children}
-                {/*<FooterTwo logoName={'logo.png'}/>*/}
+                {/*<Footer logoName={'logo.png'}/>*/}
 
                 {/*<ThemeSettings />*/}
 

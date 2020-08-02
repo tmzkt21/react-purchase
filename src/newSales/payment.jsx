@@ -1,60 +1,75 @@
-import React, {Component} from 'react';
+import React, { useState} from 'react';
 import {Helmet} from 'react-helmet'
-import { connect } from 'react-redux'
+import {connect, useSelector} from 'react-redux'
 import {Link, Redirect } from 'react-router-dom'
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 import SimpleReactValidator from 'simple-react-validator';
 
 import Breadcrumb from "../common/breadcrumb";
-import {removeFromWishlist} from '../atomic/actions'
-import {getCartTotal} from "../atomic/services";
+import {toast} from "react-toastify";
+// import {getCartTotal} from "../atomic/services";
+// import {removeFromWishlist} from '../atomic/actions'
+// import * as types from "../atomic/constants/ActionTypes";
 
-class Payment extends Component {
+const REMOVE_FROM_WISHLIST = 'REMOVE_FROM_WISHLIST'
 
-    constructor (props) {
-        super (props)
+const removeFromWishlist = product_id => (dispatch) => {
+    toast.error("Item Removed from Wishlist");
+    dispatch({
+        type: REMOVE_FROM_WISHLIST,
+        product_id
+    })
+};
 
-        this.state = {
-            payment:'stripe',
-            first_name:'',
-            last_name:'',
-            phone:'',
-            email:'',
-            country:'',
-            address:'',
-            city:'',
-            state:'',
-            pincode:'',
-            create_account: ''
-        }
-        this.validator = new SimpleReactValidator();
+
+export const getCartTotal = cartItems => {
+    var total = 0;
+    for(var i=0; i<cartItems.length; i++){
+        total += parseInt(cartItems[i].qty, 10)*parseInt((cartItems[i].price*cartItems[i].discount/100), 10);
     }
+    return total;
+}
 
-    setStateFromInput = (event) => {
+const Payment = () => {
+    const [payment,setpayment] = useState('stripe')
+    const [first_name,setfirst_name] = useState('')
+    const [last_name,setlast_name] = useState('')
+    const [phone,setphone] = useState('')
+    const [email,setemail] = useState('')
+    const [country,setcountry] = useState('')
+    const [address,setaddress] = useState('')
+    const [city,setcity] = useState('')
+    const [state,setstate] = useState('')
+    const [pincode,setpincode] = useState('')
+    const [create_account,setcreate_account] = useState('')
+    const [obj,setobj] = useState({})
+    const cartItems = useSelector(state => state.cartList.cart)
+    const symbol = useSelector(state => state.data.symbol)
+    const total = useSelector(state => getCartTotal(state.cartList.cart))
+
+
+    const setStateFromInput = (event) => {
         var obj = {};
         obj[event.target.name] = event.target.value;
         this.setState(obj);
 
       }
 
-      setStateFromCheckbox = (event) => {
-          var obj = {};
-          obj[event.target.name] = event.target.checked;
-          this.setState(obj);
+     // const setStateFromCheckbox = (event) => {
+     //      var obj = {};
+     //      obj[event.target.name] = event.target.checked;
+     //      setobj(obj);
+     //      if(!this.validator.fieldValid(event.target.name))
+     //      {
+     //          this.validator.showMessages();
+     //      }
+     //    }
 
-          if(!this.validator.fieldValid(event.target.name))
-          {
-              this.validator.showMessages();
-          }
-        }
-
-    checkhandle(value) {
-        this.setState({
-            payment: value
-        })
+    const checkhandle = (value) => {
+        setpayment(value)
     }
 
-    StripeClick = () => {
+    const StripeClick = (props) => {
 
         if (this.validator.allValid()) {
             alert('You submitted the form and stuff!');
@@ -64,9 +79,9 @@ class Payment extends Component {
                 locale: 'auto',
                 token: (token) => {
                     console.log(token)
-                      this.props.history.push({
+                      props.history.push({
                           pathname: '/order-success',
-                              state: { payment: token, items: this.props.cartItems, orderTotal: this.props.total, symbol: this.props.symbol }
+                              state: { payment: token, items: cartItems, orderTotal: total, symbol: symbol }
                       })
                 }
               });
@@ -82,8 +97,7 @@ class Payment extends Component {
         }
     }
 
-    render (){
-        const {cartItems, symbol, total} = this.props;
+        // const {cartItems, symbol, total} = this.props;
 
         // Paypal Integration
         const onSuccess = (payment) => {
@@ -130,28 +144,50 @@ class Payment extends Component {
                                         <div className="col-lg-6 col-sm-12 col-xs-12">
                                             <div className="checkout-title">
                                                 <h3>Billing Details</h3>
+                                                <div>
+                                                    <div className="field-label">성 (영문)</div>
+                                                    <input type="text" name="first_name" value={first_name}/>
+                                                    <div className="field-label">이름 (영문)</div>
+                                                    <input type="text" name="last_name" value={last_name}/><br/>
+                                                    <div className="field-label">전화번호</div>
+                                                    <input type="text" name="phone"  value={phone}/>
+                                                    <div className="field-label">이메일 주소</div>
+                                                    <input type="text" name="email" value={email}/>
+                                                    <div className="field-label">주소</div>
+                                                    <input type="text" name="address" value={address} onChange={setStateFromInput} placeholder="Street address" />
+                                                </div>
+                                                    <td><input type="checkbox" name="chk_info" value="HTML"/>수집.이용 및 국내외 사업자에 대한 개인정보 제공에 동의합니다</td><br/>
+                                                    <td><input type="checkbox" name="chk_info" value="HTML"/>전기차의 자동차구매계약 상세조건 및 수퍼차저 공정 이용 정책에 동의합니다</td><br/>
+                                                    <td><input type="checkbox" name="chk_info" value="HTML"/>전기차의 위치기반서비스 약관에 동의합니다</td><br/>
+                                                    {/*<input type="checkbox" name="create_account" id="account-option"  checked={create_account} />*/}
+                                                    {/*&ensp; <label htmlFor="account-option">수집.이용 및 국내외 사업자에 대한 개인정보 제공에 동의합니다</label>*/}
+                                                    {/*<input type="checkbox" name="create_account" id="account-option"  checked={create_account}/>*/}
+                                                    {/*&ensp; <label htmlFor="account-option">전기차의 자동차구매계약 상세조건 및 수퍼차저 공정 이용 정책에 동의합니다</label>*/}
+                                                    {/*<input type="checkbox" name="create_account" id="account-option"  checked={create_account} />*/}
+                                                    {/*&ensp; <label htmlFor="account-option">전기차의 위치기반서비스 약관에 동의합니다</label>*/}
                                             </div>
                                             <div className="row check-out">
-                                                <div className="form-group col-md-6 col-sm-6 col-xs-12">
-                                                    <div className="field-label">성 (영문)</div>
-                                                    <input type="text" name="first_name" value={this.state.first_name} onChange={this.setStateFromInput} />
-                                                    {this.validator.message('first_name', this.state.first_name, 'required|alpha')}
-                                                </div>
-                                                <div className="form-group col-md-6 col-sm-6 col-xs-12">
-                                                    <div className="field-label">이름 (영문)</div>
-                                                    <input type="text" name="last_name" value={this.state.last_name} onChange={this.setStateFromInput} />
-                                                    {this.validator.message('last_name', this.state.last_name, 'required|alpha')}
-                                                </div>
-                                                <div className="form-group col-md-6 col-sm-6 col-xs-12">
-                                                    <div className="field-label">전화번호</div>
-                                                    <input type="text" name="phone"  value={this.state.phone} onChange={this.setStateFromInput} />
-                                                    {this.validator.message('phone', this.state.phone, 'required|phone')}
-                                                </div>
-                                                <div className="form-group col-md-6 col-sm-6 col-xs-12">
-                                                    <div className="field-label">이메일 주소</div>
-                                                    <input type="text" name="email" value={this.state.email} onChange={this.setStateFromInput} />
-                                                    {this.validator.message('email', this.state.email, 'required|email')}
-                                                </div>
+                                                {/*<div className="form-group col-md-6 col-sm-6 col-xs-12">*/}
+                                                {/*    <div className="field-label">성 (영문)</div>*/}
+                                                {/*    <input type="text" name="first_name" value={first_name} onChange={setStateFromInput} />*/}
+                                                {/*    /!*{this.validator.message('first_name', first_name, 'required|alpha')}*!/*/}
+                                                {/*</div>*/}
+
+                                                {/*<div className="form-group col-md-6 col-sm-6 col-xs-12">*/}
+                                                {/*    <div className="field-label">이름 (영문)</div>*/}
+                                                {/*    <input type="text" name="last_name" value={last_name} onChange={setStateFromInput} />*/}
+                                                {/*    /!*{this.validator.message('last_name', last_name, 'required|alpha')}*!/*/}
+                                                {/*</div>*/}
+                                                {/*<div className="form-group col-md-6 col-sm-6 col-xs-12">*/}
+                                                {/*    <div className="field-label">전화번호</div>*/}
+                                                {/*    <input type="text" name="phone"  value={phone} onChange={setStateFromInput} />*/}
+                                                {/*    /!*{this.validator.message('phone', phone, 'required|phone')}*!/*/}
+                                                {/*</div>*/}
+                                                {/*<div className="form-group col-md-6 col-sm-6 col-xs-12">*/}
+                                                {/*    <div className="field-label">이메일 주소</div>*/}
+                                                {/*    <input type="text" name="email" value={email} onChange={setStateFromInput} />*/}
+                                                {/*    /!*{this.validator.message('email', email, 'required|email')}*!/*/}
+                                                {/*</div>*/}
                                                 {/*<div className="form-group col-md-12 col-sm-12 col-xs-12">*/}
                                                 {/*    <div className="field-label">나라 (국적)</div>*/}
                                                 {/*    <select name="country" value={this.state.country} onChange={this.setStateFromInput}>*/}
@@ -162,11 +198,11 @@ class Payment extends Component {
                                                 {/*    </select>*/}
                                                 {/*    {this.validator.message('country', this.state.country, 'required')}*/}
                                                 {/*</div>*/}
-                                                <div className="form-group col-md-12 col-sm-12 col-xs-12">
-                                                    <div className="field-label">주소</div>
-                                                    <input type="text" name="address" value={this.state.address} onChange={this.setStateFromInput} placeholder="Street address" />
-                                                    {this.validator.message('address', this.state.address, 'required|min:20|max:120')}
-                                                </div>
+                                                {/*<div className="form-group col-md-12 col-sm-12 col-xs-12">*/}
+                                                {/*    <div className="field-label">주소</div>*/}
+                                                {/*    <input type="text" name="address" value={address} onChange={setStateFromInput} placeholder="Street address" />*/}
+                                                {/*    /!*{this.validator.message('address', address, 'required|min:20|max:120')}*!/*/}
+                                                {/*</div>*/}
                                                 {/*<div className="form-group col-md-12 col-sm-12 col-xs-12">*/}
                                                 {/*    <div className="field-label">Town/City</div>*/}
                                                 {/*    <input type="text" name="city" value={this.state.city} onChange={this.setStateFromInput} />*/}
@@ -182,21 +218,21 @@ class Payment extends Component {
                                                 {/*    <input type="text" name="pincode" value={this.state.spincode} onChange={this.setStateFromInput} />*/}
                                                 {/*    {this.validator.message('pincode', this.state.pincode, 'required|integer')}*/}
                                                 {/*</div>*/}
-                                                <div className="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                    <input type="checkbox" name="create_account" id="account-option"  checked={this.state.create_account} onChange={this.setStateFromCheckbox}/>
-                                                    &ensp; <label htmlFor="account-option">수집.이용 및 국내외 사업자에 대한 개인정보 제공에 동의합니다</label>
-                                                    {this.validator.message('checkbox', this.state.create_account, 'create_account')}
-                                                </div>
-                                                <div className="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                    <input type="checkbox" name="create_account" id="account-option"  checked={this.state.create_account} onChange={this.setStateFromCheckbox}/>
-                                                    &ensp; <label htmlFor="account-option">전기차의 자동차구매계약 상세조건 및 수퍼차저 공정 이용 정책에 동의합니다</label>
-                                                    {this.validator.message('checkbox', this.state.create_account, 'create_account')}
-                                                </div>
-                                                <div className="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                    <input type="checkbox" name="create_account" id="account-option"  checked={this.state.create_account} onChange={this.setStateFromCheckbox}/>
-                                                    &ensp; <label htmlFor="account-option">전기차의 위치기반서비스 약관에 동의합니다</label>
-                                                    {this.validator.message('checkbox', this.state.create_account, 'create_account')}
-                                                </div>
+                                                {/*<div className="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">*/}
+                                                {/*    <input type="checkbox" name="create_account" id="account-option"  checked={create_account} onChange={setStateFromCheckbox}/>*/}
+                                                {/*    &ensp; <label htmlFor="account-option">수집.이용 및 국내외 사업자에 대한 개인정보 제공에 동의합니다</label>*/}
+                                                {/*    /!*{this.validator.message('checkbox', create_account, 'create_account')}*!/*/}
+                                                {/*</div>*/}
+                                                {/*<div className="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">*/}
+                                                {/*    <input type="checkbox" name="create_account" id="account-option"  checked={create_account} onChange={setStateFromCheckbox}/>*/}
+                                                {/*    &ensp; <label htmlFor="account-option">전기차의 자동차구매계약 상세조건 및 수퍼차저 공정 이용 정책에 동의합니다</label>*/}
+                                                {/*    /!*{this.validator.message('checkbox', create_account, 'create_account')}*!/*/}
+                                                {/*</div>*/}
+                                                {/*<div className="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">*/}
+                                                {/*    <input type="checkbox" name="create_account" id="account-option"  checked={create_account} onChange={setStateFromCheckbox}/>*/}
+                                                {/*    &ensp; <label htmlFor="account-option">전기차의 위치기반서비스 약관에 동의합니다</label>*/}
+                                                {/*    /!*{this.validator.message('checkbox', create_account, 'create_account')}*!/*/}
+                                                {/*</div>*/}
                                             </div>
                                         </div>
                                         <div className="col-lg-6 col-sm-12 col-xs-12">
@@ -236,13 +272,13 @@ class Payment extends Component {
                                                             <ul>
                                                                 <li>
                                                                     <div className="radio-option stripe">
-                                                                        <input type="radio" name="payment-group" id="payment-2" defaultChecked={true} onClick={() => this.checkhandle('stripe')} />
+                                                                        <input type="radio" name="payment-group" id="payment-2" defaultChecked={true} onClick={() => checkhandle('stripe')} />
                                                                         <label htmlFor="payment-2">Stripe</label>
                                                                     </div>
                                                                 </li>
                                                                 <li>
                                                                     <div className="radio-option paypal">
-                                                                        <input type="radio" name="payment-group" id="payment-1" onClick={() => this.checkhandle('paypal')} />
+                                                                        <input type="radio" name="payment-group" id="payment-1" onClick={() => checkhandle('paypal')} />
                                                                             <label htmlFor="payment-1">PayPal<span className="image"><img src={`${process.env.PUBLIC_URL}/assets/images/paypal.png`} alt=""/></span></label>
                                                                     </div>
                                                                 </li>
@@ -251,7 +287,7 @@ class Payment extends Component {
                                                     </div>
                                                     {(total !== 0)?
                                                     <div className="text-right">
-                                                        {(this.state.payment === 'stripe')? <button type="button" className="btn-solid btn" onClick={() => this.StripeClick()} >Place Order</button>:
+                                                        {(payment === 'stripe')? <button type="button" className="btn-solid btn" onClick={() => StripeClick()} >Place Order</button>:
                                                          <PaypalExpressBtn env={'sandbox'} client={client} currency={'USD'} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />}
                                                     </div>
                                                     : ''}
@@ -316,15 +352,17 @@ class Payment extends Component {
                 </section>
             </div>
         )
-    }
 }
-const mapStateToProps = (state) => ({
-    cartItems: state.cartList.cart,
-    symbol: state.data.symbol,
-    total: getCartTotal(state.cartList.cart)
-})
 
-export default connect(
-    mapStateToProps,
-    {removeFromWishlist}
-)(Payment)
+
+// const mapStateToProps = (state) => ({
+//     cartItems: state.cartList.cart,
+//     symbol: state.data.symbol,
+//     total: getCartTotal(state.cartList.cart)
+// })
+
+// export default connect(
+//     mapStateToProps,
+//     {removeFromWishlist}
+// )(Payment)
+export default Payment

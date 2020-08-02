@@ -137,7 +137,7 @@ var module = {
             Payment: '결제하기',
             Basket: '장바구니',
             Compare : '연비비교',
-            prices : '신차시세',
+            Prices : '신차시세',
             Registration: '차등록비용',
 
             right_sidebar: '오른쪽 사이드바',
