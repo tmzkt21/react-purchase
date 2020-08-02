@@ -117,7 +117,7 @@ const Filter = (props) => {
 
     const clickBrandHendle = (event, brands) => {
 
-        let index = brands.indexOf(event.target.value);
+        const index = brands.indexOf(event.target.value);
         if (event.target.checked)
             brands.push(event.target.value); // push in array checked value
         else

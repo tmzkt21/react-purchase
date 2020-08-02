@@ -26,108 +26,30 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7391774a-aa25-43ef-bbcf-6fbde24c4ada" name="Default Changelist" comment="그래프 등록 화면 정리필요">
-      <change afterPath="$PROJECT_DIR$/src/cart/CartComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cart/cartReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/comparison/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/currency/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/filters/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/products/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wishlist/index.js" afterDir="false" />
+    <list default="true" id="7391774a-aa25-43ef-bbcf-6fbde24c4ada" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/app.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/common/breadcrumb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/common/footer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/common/header_components/header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/common/header_components/language.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/common/header_components/notification.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/common/header_components/searchHeader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/common/header_components/user-menu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/common/right-sidebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/common/sidebar_components/sidebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/common/sidebar_components/user-panel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/loginTabset.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/atomic/actions/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/atomic/api/portfolio.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/atomic/constants/ActionTypes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/atomic/constants/translations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/atomic/constants/translations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/atomic/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/atomic/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/BoardDetail.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/BoardMain.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/BoardProfile.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/NewPost.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/board.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/css/boardDetail.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/css/boardMain.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/css/boardNewPost.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/css/boardProfile.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/css/common.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/css/detail-page.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/css/new_post.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/css/profile.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/css/reset.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/details.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/GIF/follow.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/GIF/like-bookmark.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/GIF/login.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/GIF/post.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/GIF/tag.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/background01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/background02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/bear.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/img_section/img01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/img_section/img02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/img_section/img03.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/img_section/img04.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/img_section/img05.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/img_section/img06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/img_section/img07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/instagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/thumb.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/thumb02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/imgs/thumb03.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bookmark/bookmark.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bookmark/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cart/CartContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cart/CartContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/headers/header-one.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/headers/header-one.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/insurance/insurance.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/atomic/services/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/atomic/services/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/footers/footer-two.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/footers/footer-two.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/headers/common/cart-header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/headers/common/cart-header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/headers/common/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/headers/common/navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/headers/common/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/headers/common/sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/headers/common/topbar-dark.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/headers/common/topbar-dark.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/headers/common/topbar-white.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/headers/common/topbar-white.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/headers/common/topbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/headers/common/topbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/new-product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/new-product.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/related-product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/related-product.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/theme-settings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/theme-settings.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/product/common/product-style-five.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/common/blogsection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/common/blogsection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/common/collection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/common/collection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/common/instagram.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/common/instagram.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/common/logo-block.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/common/logo-block.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/common/product-item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/common/product-item.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/common/products.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/common/products.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/common/side-image-item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/common/side-image-item.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/common/special-product-item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/common/special-product-item.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/common/special.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/common/special.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/fashion/main.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/fashion/top-collection.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map/contact.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map/map.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/common/details-top-tabs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/common/details-top-tabs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/common/filter-bar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/common/filter-bar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newSales/common/filter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/common/filter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/common/product-list-item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/common/product-list-item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/common/product-listing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/common/product-listing.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/common/product/details-price.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/common/product/details-price.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/common/product/image-zoom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/common/product/image-zoom.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/common/product/small-image.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/common/product/small-image.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/common/service.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/common/service.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/comparison.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/comparison.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/detailpurchase.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/detailpurchase.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/payment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/payment.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/prices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/prices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/purchase.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/purchase.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/registration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newSales/shopping-basket.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newSales/shopping-basket.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/purchase/purchase.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/purchase/success-page.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/search/search.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usedSales/userdSales.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/login.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/register.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +159,7 @@
       <workItem from="1596298617352" duration="23594000" />
       <workItem from="1596365621884" duration="661000" />
       <workItem from="1596369225162" duration="739000" />
-      <workItem from="1596369998634" duration="4152000" />
+      <workItem from="1596369998634" duration="10548000" />
     </task>
     <task id="LOCAL-00001" summary="그래프 등록 화면 정리필요">
       <created>1596218593738</created>
@@ -246,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596218593738</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="차 상세사진 안뜨고있음">
+      <created>1596374182269</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1596374182269</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +207,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="그래프 등록 화면 정리필요" />
-    <option name="LAST_COMMIT_MESSAGE" value="그래프 등록 화면 정리필요" />
+    <MESSAGE value="차 상세사진 안뜨고있음" />
+    <option name="LAST_COMMIT_MESSAGE" value="차 상세사진 안뜨고있음" />
   </component>
   <component name="WindowStateProjectService">
     <state x="299" y="133" width="770" height="553" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595854393203">
@@ -290,43 +220,48 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="754" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1596360110973" />
+    <state x="300" y="0" key="CommitChangelistDialog2" timestamp="1596374179519">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="300" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1596374179519" />
     <state x="696" y="122" key="FileChooserDialogImpl" timestamp="1596334604093">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="696" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1596334604093" />
-    <state width="1345" height="57" key="GridCell.Tab.0.bottom" timestamp="1596373092784">
+    <state width="840" height="57" key="GridCell.Tab.0.bottom" timestamp="1596378602188">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1259" height="145" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596221993163" />
-    <state width="1345" height="57" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596373092784" />
+    <state width="840" height="57" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1596378602188" />
     <state width="1894" height="287" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1595839245317" />
-    <state width="1345" height="57" key="GridCell.Tab.0.center" timestamp="1596373092783">
+    <state width="840" height="57" key="GridCell.Tab.0.center" timestamp="1596378602188">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1259" height="145" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596221993163" />
-    <state width="1345" height="57" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596373092783" />
+    <state width="840" height="57" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1596378602188" />
     <state width="1894" height="287" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1595839245316" />
-    <state width="1345" height="57" key="GridCell.Tab.0.left" timestamp="1596373092783">
+    <state width="840" height="57" key="GridCell.Tab.0.left" timestamp="1596378602188">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1259" height="145" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596221993163" />
-    <state width="1345" height="57" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596373092783" />
+    <state width="840" height="57" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1596378602188" />
     <state width="1894" height="287" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1595839245316" />
-    <state width="1345" height="57" key="GridCell.Tab.0.right" timestamp="1596373092784">
+    <state width="840" height="57" key="GridCell.Tab.0.right" timestamp="1596378602188">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1259" height="145" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596221993163" />
-    <state width="1345" height="57" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596373092784" />
+    <state width="840" height="57" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1596378602188" />
     <state width="1894" height="287" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1595839245317" />
-    <state x="1599" y="73" key="Vcs.Push.Dialog.v2" timestamp="1596218597258">
-      <screen x="1366" y="0" width="1280" height="680" />
+    <state x="249" y="78" key="Vcs.Push.Dialog.v2" timestamp="1596374184918">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="1599" y="73" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596218597258" />
-    <state x="52" y="67" width="586" height="596" key="find.popup" timestamp="1596373910611">
+    <state x="249" y="78" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1596374184918" />
+    <state x="52" y="67" width="586" height="596" key="find.popup" timestamp="1596377367788">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="2041" y="123" width="557" height="557" key="find.popup/0.0.1366.728/1366.0.1280.680@1366.0.1280.680" timestamp="1596219801834" />
-    <state x="52" y="67" width="586" height="596" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1596373910611" />
+    <state x="52" y="67" width="586" height="596" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1596377367788" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1596354757371">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

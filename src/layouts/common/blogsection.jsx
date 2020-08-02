@@ -4,8 +4,7 @@ import {Link} from 'react-router-dom';
 
 import {Slider3} from "../../atomic/services/script"
 
-class BlogSection extends Component {
-    render (){
+const BlogSection = () => {
 
         return (
                 <div className="container">
@@ -99,7 +98,7 @@ class BlogSection extends Component {
                     </div>
                 </div>
         )
-    }
+
 }
 
 export default BlogSection;

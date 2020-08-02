@@ -3,9 +3,7 @@ import Slider from 'react-slick';
 
 import {Slider6} from "../../atomic/services/script";
 
-class LogoBlock extends Component {
-
-    render (){
+const LogoBlock = () => {
         return (
             <section className="section-b-space">
                 <div className="container">
@@ -74,7 +72,6 @@ class LogoBlock extends Component {
                 </div>
             </section>
         )
-    }
 }
 
 export default LogoBlock;

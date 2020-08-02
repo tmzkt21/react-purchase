@@ -1,40 +1,35 @@
-import React, { Component } from 'react';
+import React, {Component, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { withTranslate } from 'react-redux-multilingual'
 
-class NavBar extends Component {
-    constructor(props) {
-        super(props);
+const NavBar = props => {
+    const [navClose,setnavClose] = useState({right: '0px'})
 
-        this.state = {
-            navClose: { right: '0px' }
-        }
-    }
 
-    componentWillMount() {
+    const componentWillMount = (props) => {
         if (window.innerWidth < 750) {
-            this.setState({ navClose: { right: '-410px' } })
+            setnavClose( { right: '-410px' } )
         }
         if (window.innerWidth < 1199) {
-            this.setState({ navClose: { right: '-300px' } })
+            setnavClose({ right: '-300px' })
         }
     }
 
-    openNav() {
+    const openNav = () => {
         console.log('open')
-        this.setState({ navClose: { right: '0px' } })
+        setnavClose(  {right: '0px'} )
     }
-    closeNav() {
-        this.setState({ navClose: { right: '-410px' } })
+    const closeNav = () => {
+        setnavClose({ right: '-410px' })
     }
 
-    onMouseEnterHandler() {
+    const onMouseEnterHandler = () => {
         if (window.innerWidth > 1199) {
             document.querySelector("#main-menu").classList.add("hover-unset");
         }
     }
 
-    handleSubmenu = (event) => {
+    const handleSubmenu = (event) => {
         if (event.target.classList.contains('sub-arrow'))
             return;
 
@@ -49,7 +44,7 @@ class NavBar extends Component {
         }
     }
 
-    handleMegaSubmenu = (event) => {
+    const handleMegaSubmenu = (event) => {
         if (event.target.classList.contains('sub-arrow'))
             return;
 
@@ -62,25 +57,23 @@ class NavBar extends Component {
             event.target.parentNode.nextElementSibling.classList.add('opensubmegamenu')
         }
     }
-
-    render() {
-        const { translate } = this.props;
+        const { translate } = props;
         return (
             <div>
                 <div className="main-navbar">
                     <div id="main-nav" >
-                        <div className="toggle-nav" onClick={this.openNav.bind(this)} >
+                        <div className="toggle-nav" onClick={openNav.bind(this)} >
                             <i className="fa fa-bars sidebar-bar"/>
                         </div>
-                        <ul className="nav-menu" style={this.state.navClose}>
-                            <li className="back-btn" onClick={this.closeNav.bind(this)} >
+                        <ul className="nav-menu" style={navClose}>
+                            <li className="back-btn" onClick={closeNav.bind(this)} >
                                 <div className="mobile-back text-right">
                                     <span >Back</span>
                                     <i className="fa fa-angle-right pl-2" aria-hidden="true"/>
                                 </div>
                             </li>
                             <li >
-                                <Link to="#" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
+                                <Link to="#" className="nav-link" onClick={(e) => handleSubmenu(e)}>
                                     {translate('admin')}
                                     <span className="sub-arrow"/>
                                 </Link>
@@ -90,7 +83,7 @@ class NavBar extends Component {
                                 </ul>
                             </li>
                             <li >
-                                <Link to="#" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
+                                <Link to="#" className="nav-link" onClick={(e) => handleSubmenu(e)}>
                                     {translate('new_car')}
                                     <span className="sub-arrow"/>
                                 </Link>
@@ -109,7 +102,7 @@ class NavBar extends Component {
                                 </ul>
                             </li>
                             <li >
-                                <Link to="#" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
+                                <Link to="#" className="nav-link" onClick={(e) => handleSubmenu(e)}>
                                     {translate('used_car')}
                                     <span className="sub-arrow"/>
                                 </Link>
@@ -125,7 +118,7 @@ class NavBar extends Component {
                                 </ul>
                             </li>
                             <li>
-                                <Link to="#" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
+                                <Link to="#" className="nav-link" onClick={(e) => handleSubmenu(e)}>
                                     {translate('map')}
                                     <span className="sub-arrow"/>
                                 </Link>
@@ -135,7 +128,7 @@ class NavBar extends Component {
                                 </ul>
                             </li>
                             <li >
-                                <Link to="#" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
+                                <Link to="#" className="nav-link" onClick={(e) => handleSubmenu(e)}>
                                     {translate('board')}
                                     <span className="sub-arrow"/>
                                 </Link>
@@ -146,7 +139,7 @@ class NavBar extends Component {
                                 </ul>
                             </li>
                             <li className="mega-menu">
-                                <Link to="#" className="dropdown" onClick={(e) => this.handleSubmenu(e)}>
+                                <Link to="#" className="dropdown" onClick={(e) => handleSubmenu(e)}>
                                     {translate('features')}
                                     <span className="sub-arrow"/>
                                 </Link>
@@ -156,7 +149,7 @@ class NavBar extends Component {
                                             <div className="col mega-box">
                                                 <div className="link-section">
                                                     <div className="menu-title" >
-                                                        <h5 onClick={(e) => this.handleMegaSubmenu(e)}>
+                                                        <h5 onClick={(e) => handleMegaSubmenu(e)}>
                                                             {translate('portfolio')}
                                                             <span className="sub-arrow"/>
                                                         </h5>
@@ -177,7 +170,7 @@ class NavBar extends Component {
                                             <div className="col mega-box">
                                                 <div className="link-section">
                                                     <div className="menu-title" >
-                                                        <h5 onClick={(e) => this.handleMegaSubmenu(e)}>
+                                                        <h5 onClick={(e) => handleMegaSubmenu(e)}>
                                                             {translate('theme_elements')}
                                                             <span className="sub-arrow"/>
                                                         </h5>
@@ -197,7 +190,7 @@ class NavBar extends Component {
                                             <div className="col mega-box">
                                                 <div className="link-section">
                                                     <div className="menu-title" >
-                                                        <h5 onClick={(e) => this.handleMegaSubmenu(e)}>
+                                                        <h5 onClick={(e) => handleMegaSubmenu(e)}>
                                                             {translate('product_elements')}
                                                             <span className="sub-arrow"/>
                                                         </h5>
@@ -216,7 +209,7 @@ class NavBar extends Component {
                                             <div className="col mega-box">
                                                 <div className="link-section">
                                                     <div className="menu-title" >
-                                                        <h5 onClick={(e) => this.handleMegaSubmenu(e)}>
+                                                        <h5 onClick={(e) => handleMegaSubmenu(e)}>
                                                             {translate('email_template')}
                                                             <span className="sub-arrow"/>
                                                         </h5>
@@ -240,7 +233,6 @@ class NavBar extends Component {
                 </div>
             </div>
         )
-    }
 }
 
 
